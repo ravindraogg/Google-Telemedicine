@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'app/pages/login.dart';
+import 'app/pages/register.dart';
 
 void main() {
   runApp(const TelemedicineApp());
@@ -10,9 +12,13 @@ class TelemedicineApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: const MainPage(),
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+      },
     );
   }
 }
@@ -44,7 +50,7 @@ class MainPage extends StatelessWidget {
             right: 20,
             child: ElevatedButton(
               onPressed: () {
-                // TODO: Implement login functionality
+                Navigator.pushNamed(context, '/login');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -72,24 +78,23 @@ class MainPage extends StatelessWidget {
           ),
           // Doctor Image
           Positioned(
-  bottom: 20,
-  right: 10,
-  child: SizedBox(
-    height: 250, // Adjust as needed
-    width: 200,
-    child: Image.asset(
-      'assets/doctor.png',
-      fit: BoxFit.contain,
-    ),
-  ),
-),
-
+            bottom: 20,
+            right: 10,
+            child: SizedBox(
+              height: 250, // Adjust as needed
+              width: 200,
+              child: Image.asset(
+                'assets/doctor.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
           Positioned(
             left: 20,
             bottom: 50,
             child: ElevatedButton(
               onPressed: () {
-                // TODO: Navigate to next screen
+                Navigator.pushNamed(context, '/register');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

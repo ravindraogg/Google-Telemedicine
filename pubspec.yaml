@@ -91,3 +91,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/doctor.png
+    - assets/google.png
+    - assets/microsoft.png
+    - assets/apple.png
+    - assets/back.png
